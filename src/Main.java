@@ -1,19 +1,18 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
+        int sum = 0;
+        int num;
 
-        int randomNum = random.nextInt(3);
-        int guessNum;
-        do {
-            System.out.println("Please guess the number");
-            guessNum = scanner.nextInt();
-            if (randomNum != guessNum) System.out.println("Please try again");
-
-        } while (randomNum != guessNum);
-        System.out.println("Success!!! You guessed correct: " + randomNum);
+        System.out.println("Please enter number:");
+        num = scanner.nextInt();
+        while (num != 0){
+            sum+=num;
+            System.out.println("Please enter number:");
+            num = scanner.nextInt();
+        }
+        System.out.println("sum is :"+ sum);
     }
 }
