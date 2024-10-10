@@ -1,34 +1,19 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int result;
-        String operator;
+        Random random = new Random();
 
-        System.out.println("Please enter first number");
-        int firstNum = scanner.nextInt();
+        int randomNum = random.nextInt(3);
+        int guessNum;
+        do {
+            System.out.println("Please guess the number");
+            guessNum = scanner.nextInt();
+            if (randomNum != guessNum) System.out.println("Please try again");
 
-        System.out.println("Please enter second number");
-        int secondNum = scanner.nextInt();
-
-        System.out.println("Choose number: 1) +, 2) -, 3) *, 4) /");
-        int operatorNum = scanner.nextInt();
-
-        if (operatorNum == 1){
-            result = firstNum + secondNum;
-            operator = "+";
-        } else if (operatorNum == 2) {
-            result = firstNum - secondNum;
-            operator = "-";
-        } else if (operatorNum == 3) {
-            result = firstNum * secondNum;
-            operator = "*";
-        } else {
-            result = firstNum / secondNum;
-            operator = "/";
-        }
-
-        System.out.printf("%d %s %d = %d",firstNum,operator,secondNum,result);
+        } while (randomNum != guessNum);
+        System.out.println("Success!!! You guessed correct: " + randomNum);
     }
 }
