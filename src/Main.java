@@ -1,15 +1,34 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-       int evenCount = 0;
-       int oddCount = 0;
+        Scanner scanner = new Scanner(System.in);
+        int result;
+        String operator;
 
-       for (int i = 1; i<= 100; i++){
-           if (i % 2 == 0){
-               evenCount++;
-           }else {
-               oddCount++;
-           }
-       }
-       System.out.printf("Between(including) 1 and 100 there are %d even and %d odd numbers",evenCount, oddCount);
+        System.out.println("Please enter first number");
+        int firstNum = scanner.nextInt();
+
+        System.out.println("Please enter second number");
+        int secondNum = scanner.nextInt();
+
+        System.out.println("Choose number: 1) +, 2) -, 3) *, 4) /");
+        int operatorNum = scanner.nextInt();
+
+        if (operatorNum == 1){
+            result = firstNum + secondNum;
+            operator = "+";
+        } else if (operatorNum == 2) {
+            result = firstNum - secondNum;
+            operator = "-";
+        } else if (operatorNum == 3) {
+            result = firstNum * secondNum;
+            operator = "*";
+        } else {
+            result = firstNum / secondNum;
+            operator = "/";
+        }
+
+        System.out.printf("%d %s %d = %d",firstNum,operator,secondNum,result);
     }
 }
