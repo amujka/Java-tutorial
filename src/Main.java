@@ -4,23 +4,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        //Zadatak 1: Brojevi od 1 do N
+        //Zadatak 2: Brojanje znamenki broja
 
-        int nNumber;
-        int sum = 0;
+        int num = scanner.nextInt();
+        int numTemp = num;
+        int digitCount = 0;
 
-        do {
-            System.out.println("Please enter integer");
-            nNumber = scanner.nextInt();
-            if (nNumber < 0) {
-                System.out.println("Number must be positive integer");
-            }
-        } while (nNumber < 0);
-
-        for (int i = 0; i <= nNumber; i++) {
-            sum+=i;
+        while (num > 0){
+            num = num /10;
+            digitCount++;
         }
 
-        System.out.println("Sum of all numbers up to " + nNumber + " is " + sum);
+        System.out.println(numTemp + " has " + digitCount + " digits");
     }
 }
