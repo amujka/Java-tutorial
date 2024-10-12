@@ -3,24 +3,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        //Zadatak 2: Brojanje znamenki broja
 
-        //Zadatak 1: Brojevi od 1 do N
+        System.out.println("Please enter integer");
+        int num = scanner.nextInt();
+        int tempNum = num;
+        int digitCount = 0;
 
-        int nNumber;
-        int sum = 0;
-
-        do {
-            System.out.println("Please enter integer");
-            nNumber = scanner.nextInt();
-            if (nNumber < 0) {
-                System.out.println("Number must be positive integer");
-            }
-        } while (nNumber < 0);
-
-        for (int i = 0; i <= nNumber; i++) {
-            sum+=i;
+        while (num > 0){
+            num = num /10;
+            digitCount++;
         }
 
-        System.out.println("Sum of all numbers up to " + nNumber + " is " + sum);
+        System.out.println(tempNum + " has " + digitCount + " digits");
     }
 }
