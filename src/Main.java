@@ -1,24 +1,42 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+//        1. Zadatak – Zamjena najmanjeg i najvećeg broja u List-i
+
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> numbersList = new ArrayList<>();
+        int number;
 
-        System.out.println("Please enter array length:");
-        int arrayLength = scanner.nextInt();
-        int [] numArray = new int[arrayLength];
+        do {
+            System.out.println("Please enter integer or 0 for exit");
+            number = scanner.nextInt();
+            if (number != 0) {
+                numbersList.add(number);
+            }
+        }while (number != 0);
 
-        for (int i = 0; i < arrayLength; i++) {
-            System.out.printf("Enter %d. number: ", i + 1);
-            numArray[i]= scanner.nextInt();
-        }
+        System.out.println("Numbers in a numbersList are:" + numbersList);
 
-        int biggerNum = 0;
-        for (int x : numArray){
-            if (x > biggerNum) {
-                biggerNum = x;
+        int minNumber = numbersList.get(0);
+        int maxNumber = numbersList.get(0);
+        for (int i = 1; i < numbersList.size(); i++) {
+            if (numbersList.get(i) < minNumber){
+                minNumber = numbersList.get(i);
+            }else if (numbersList.get(i) > maxNumber) {
+                maxNumber = numbersList.get(i);
             }
         }
-        System.out.println("Biggest num in the array is " + biggerNum);
+        System.out.println("MIN: " + minNumber + ", MAX: " + maxNumber);
+
+        int indexOfMin = numbersList.indexOf(minNumber);
+        int indexOfMax = numbersList.indexOf(maxNumber);
+
+        numbersList.set(indexOfMin, maxNumber);
+        numbersList.set(indexOfMax, minNumber);
+
+        System.out.println(numbersList);
     }
 }
