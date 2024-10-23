@@ -2,34 +2,45 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
 
-        //1.zadatak
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         ArrayList<Integer> numberList = new ArrayList<>();
-        System.out.println("Please enter how many numbers you want to enter:");
-        int listLength = scanner.nextInt();
+        int number;
 
-        for (int i = 0; i < listLength; i++) {
-            System.out.printf("Please enter %d. number", i+1);
-            numberList.add(scanner.nextInt());
-        }
+        do {
+            System.out.println("Please enter number or 0 for exit");
+            number = scanner.nextInt();
+            if (number != 0) {
+                numberList.add(number);
+            }
+        }while (number != 0);
 
-        System.out.println(checkDuplicates(numberList));
+        System.out.println( calcAvg(numberList));
     }
 
-    static boolean checkDuplicates(ArrayList<Integer> list){
-        boolean hasDuplicate = false;
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i+1; j < list.size(); j++) {
-                if (list.get(i) == list.get(j)){
-                    hasDuplicate = true;
-                    break;
-                }
+    static float calcAvg(ArrayList<Integer> list){
+        int minNumber = list.get(0);
+        int maxNumber = list.get(0);
+        int sum = 0;
+
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i) < minNumber){
+                minNumber = list.get(i);
+            }else if (list.get(i) > maxNumber) {
+                maxNumber = list.get(i);
             }
         }
-        return hasDuplicate;
-    }
+        System.out.println(list);
+        list.remove(list.indexOf(minNumber));
+        list.remove(list.indexOf(maxNumber));
+        System.out.println(list);
 
+        for(int x : list){
+            sum += x;
+        }
+
+        return (float) sum / list.size();
+    }
 }
