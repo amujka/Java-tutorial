@@ -7,7 +7,7 @@ public class SavingsAccount extends Account {
     }
 
     @Override
-    public void calculateAndPrintInterestAndAmount() {
+    protected void calculateAndPrintInterestAndAmount() {
         BigDecimal interest = super.getAmount().multiply(BigDecimal.valueOf(0.015));
         super.setAmount(super.getAmount().add(interest));
 

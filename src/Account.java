@@ -11,23 +11,21 @@ public abstract class Account {
         this.amount = amount;
     }
 
-    public String getOwner() {
+    protected String getOwner() {
         return owner;
     }
 
-    public String getAccountNumber() {
+    protected String getAccountNumber() {
         return accountNumber;
     }
 
-    public BigDecimal getAmount() {
+    protected BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    protected void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
-
-    public abstract void calculateAndPrintInterestAndAmount();
 
     protected void withdraw(BigDecimal amount) {
         this.amount = this.amount.subtract(amount);
@@ -36,5 +34,7 @@ public abstract class Account {
     protected void deposit(BigDecimal amount) {
         this.amount = this.amount.add(amount);
     }
+
+    protected abstract void calculateAndPrintInterestAndAmount();
 
 }
