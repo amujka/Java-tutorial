@@ -1,0 +1,11 @@
+Name            Price      Quantity  
+Laptop          $999.99    10        
+Smartphone      $29.99     25        
+Headphones      $19.99     50        
+Smartwatch      $60.99     30        
+Tablet          $39.99     20        
+Camera          $79.99     15        
+TV              $45.99     8         
+Keyboard        $9.99      100       
+Mouse           $14.99     150       
+Charger         $4.99      200       

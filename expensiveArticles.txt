@@ -1,0 +1,4 @@
+Name            Price      Quantity  
+Laptop          $999.99    10        
+Smartwatch      $60.99     30        
+Camera          $79.99     15        
