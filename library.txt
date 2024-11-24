@@ -1,0 +1,22 @@
+LIBRARY INFO:
+
+Books List:
+ ID: 2, TITLE: 1984, AUTHOR: George Orwell
+ ID: 4, TITLE: One Hundred Years of Solitude, AUTHOR: Gabriel Garcia Marquez
+ ID: 7, TITLE: The Catcher in the Rye, AUTHOR: J.D. Salinger
+ ID: 8, TITLE: Pride and Prejudice, AUTHOR: Jane Austen
+ ID: 9, TITLE: The Lord of the Rings, AUTHOR: J.R.R. Tolkien
+ ID: 10, TITLE: The Chronicles of Narnia, AUTHOR: C.S. Lewis
+
+Members List:
+ID: 1, Tom Jones [ ID: 6, TITLE: War and Peace, AUTHOR: Leo Tolstoy]
+ID: 2, Sara Lee, No books rented
+ID: 3, John Smith, No books rented
+ID: 4, Amy Brown [ ID: 5, TITLE: Moby Dick, AUTHOR: Herman Melville]
+ID: 5, Mark Miller, No books rented
+ID: 6, Anna Davis, No books rented
+ID: 7, Paul White, No books rented
+ID: 8, Jane Green, No books rented
+ID: 9, Sam Clark, No books rented
+ID: 10, Lisa Adams, No books rented
+ID: 11, Alen Mujkanovic [ ID: 1, TITLE: To Kill a Mockingbird, AUTHOR: Harper Lee,  ID: 3, TITLE: The Great Gatsby, AUTHOR: F. Scott Fitzgerald]
