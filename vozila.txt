@@ -1,0 +1,5 @@
+Marka: Porche, registracija: ZG-1234-AA, Godina proizvodnje: 2015, Broj vrata: 3
+Marka: Mercedes, registracija: KA-4321-AB, Godina proizvodnje: 2010, Broj vrata: 5
+Marka: Honda, registracija: ST-5678-BB, Godina proizvodnje: 2012, Tip motora: Sportski
+Marka: Harley Davidson, registracija: CK-123-GM, Godina proizvodnje: 2018, Tip motora: Chopper
+Marka: Vespa, registracija: SB-222-MG, Godina proizvodnje: 2000, Tip motora: scooter
