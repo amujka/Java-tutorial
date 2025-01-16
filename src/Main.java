@@ -1,5 +1,6 @@
 import database.DatabaseService;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -9,8 +10,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Connection connection = DatabaseService.createConnection();
-        addNewPerson(connection);
-
+        updateLastNameById(connection);
     }
 
     static void addNewPerson(Connection connection) {
@@ -36,6 +36,23 @@ public class Main {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    static void updateLastNameById(Connection connection) {
+        try {
+            String callProcedure = "{CALL UpdateLastName(?, ?)}";
+            CallableStatement callableStatement = connection.prepareCall(callProcedure);
+            callableStatement.setInt(1, 6);
+            callableStatement.setString(2, "Slavkovski");
+            callableStatement.execute();
+            System.out.println("Last name updated");
+
+            callableStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
 }
