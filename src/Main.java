@@ -10,7 +10,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Connection connection = DatabaseService.createConnection();
-        updateLastNameById(connection);
+        //addNewPerson(connection);
+        //updateLastNameById(connection);
+        deleteByDateOfBirth(connection);
     }
 
     static void addNewPerson(Connection connection) {
@@ -54,5 +56,21 @@ public class Main {
         }
 
     }
+
+    static void deleteByDateOfBirth(Connection connection) {
+        try {
+            String callProcedure = "{CALL DeleteByDateOfBirth(?)}";
+            CallableStatement callableStatement = connection.prepareCall(callProcedure);
+            callableStatement.setString(1, "11-06-1990");
+            callableStatement.execute();
+            System.out.println("Success");
+
+            callableStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 
 }
